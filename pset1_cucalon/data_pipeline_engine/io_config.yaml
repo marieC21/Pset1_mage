@@ -1,0 +1,18 @@
+version: 0.1.1
+default:
+  # Default profile created for data IO access.
+  # Add your credentials for the source you use, and delete the rest.
+  
+  MYSQL_DATABASE: pset1_db
+  MYSQL_HOST: localhost
+  MYSQL_PASSWORD: MarieC2001@
+  MYSQL_PORT: 3306
+  MYSQL_USER: root
+
+  SNOWFLAKE_USER: SERVICE_USER
+  SNOWFLAKE_PASSWORD: BF2001$$ash 
+  SNOWFLAKE_ACCOUNT: ADAPFIL-NRB91509
+  SNOWFLAKE_DEFAULT_WH: COMPUTE_WH
+  SNOWFLAKE_DEFAULT_DB: RAPIDB
+  SNOWFLAKE_DEFAULT_SCHEMA: RAW
+  SNOWFLAKE_ROLE: ACCOUNTADMIN

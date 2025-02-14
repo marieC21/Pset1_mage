@@ -1,0 +1,260 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - exporter_snowflake_products
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: loader_mysql_products
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: loader_mysql_products
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - transformer_rawtoclean_products
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: exporter_snowflake_products
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - loader_mysql_products
+  uuid: exporter_snowflake_products
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - trfrmer_starschemadim
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: transformer_rawtoclean_products
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - exporter_snowflake_products
+  uuid: transformer_rawtoclean_products
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - exporter_snowfk_insta
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: loader_mysql_insta
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: loader_mysql_insta
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - trfrmer_rawtoclean_insta
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: exporter_snowfk_insta
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - loader_mysql_insta
+  uuid: exporter_snowfk_insta
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - trfrmer_starschemafact
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: trfrmer_rawtoclean_insta
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - exporter_snowfk_insta
+  uuid: trfrmer_rawtoclean_insta
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - exporter_snowfk_orderprod
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: loader_mysql_orderprod
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: loader_mysql_orderprod
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - trfrmer_rawtoclean_orderprod
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: exporter_snowfk_orderprod
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - loader_mysql_orderprod
+  uuid: exporter_snowfk_orderprod
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - trfrmer_starschemafact
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: trfrmer_rawtoclean_orderprod
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - exporter_snowfk_orderprod
+  uuid: trfrmer_rawtoclean_orderprod
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: trfrmer_starschemafact
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - trfrmer_rawtoclean_orderprod
+  - trfrmer_rawtoclean_insta
+  uuid: trfrmer_starschemafact
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - exporter_snowfk_aisle
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: loader_mysql_aisle
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: loader_mysql_aisle
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - trfrmer_rawtoclean_aisle
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: exporter_snowfk_aisle
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - loader_mysql_aisle
+  uuid: exporter_snowfk_aisle
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - trfrmer_starschemadim
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: trfrmer_rawtoclean_aisle
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - exporter_snowfk_aisle
+  uuid: trfrmer_rawtoclean_aisle
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - exporter_snowfk_dpt
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: loader_mysql_dpt
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: loader_mysql_dpt
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - trfrmer_rawtoclean_dpt
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: exporter-snowfk_dpt
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - loader_mysql_dpt
+  uuid: exporter_snowfk_dpt
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - trfrmer_starschemadim
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: trfrmer_rawtoclean_dpt
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - exporter_snowfk_dpt
+  uuid: trfrmer_rawtoclean_dpt
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: trfrmer_starschemadim
+  status: failed
+  type: transformer
+  upstream_blocks:
+  - trfrmer_rawtoclean_dpt
+  - trfrmer_rawtoclean_aisle
+  - transformer_rawtoclean_products
+  uuid: trfrmer_starschemadim
+data_integration: null
+description: null
+extensions: {}
+name: cool pine
+type: python
+updated_at: '2025-02-14 04:54:47'
+uuid: cool_pine
+widgets: []
